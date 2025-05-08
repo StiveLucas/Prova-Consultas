@@ -1,0 +1,28 @@
+CREATE SCHEMA `gerenciamento_consultas` ;
+
+
+CREATE TABLE IF NOT EXISTS `Paciente` (
+	`id` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`Nome` varchar(50) NOT NULL,
+	`CPF` varchar(30) NOT NULL UNIQUE,
+	`Telefone` varchar(30) NOT NULL UNIQUE,
+	PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `Médico` (
+	`id` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`Nome` varchar(50) NOT NULL,
+	`Especialidade` varchar(50) NOT NULL,
+	`CRM` varchar(50) NOT NULL UNIQUE,
+	PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `Consulta` (
+	`id` int AUTO_INCREMENT NOT NULL UNIQUE,
+	`id_paciente` int NOT NULL,
+	`id_medico` int NOT NULL,
+	`Data` date NOT NULL,
+	`Hora` datetime NOT NULL,
+	`Observacao` varchar(50) NOT NULL,
+	PRIMARY KEY (`id`)
+);
