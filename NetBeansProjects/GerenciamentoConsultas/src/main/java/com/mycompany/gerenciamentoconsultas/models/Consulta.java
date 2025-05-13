@@ -1,21 +1,24 @@
 package com.mycompany.gerenciamentoconsultas.models;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+
 
 public class Consulta {
     private int id;
     private int id_paciente;
     private int id_medico;
-    private LocalDate data;
-    private LocalTime hora;
+    private Date data;
+    private Time hora;
     private String observacao;
 
     public Consulta() {
     }
 
-    public Consulta(int id_paciente, int id_medico, LocalDate data, LocalTime hora, String observacao) {
+    public Consulta(int id_paciente, int id_medico, Date data, Time hora, String observacao) {
         this.id_paciente = id_paciente;
         this.id_medico = id_medico;
         this.data = data;
@@ -24,7 +27,7 @@ public class Consulta {
         
     }
 
-    public Consulta(int id, int id_paciente, int id_medico, LocalDate data, LocalTime hora, String observacao) {
+    public Consulta(int id, int id_paciente, int id_medico, Date data, Time hora, String observacao) {
         this.id = id;
         this.id_paciente = id_paciente;
         this.id_medico = id_medico;
@@ -45,11 +48,11 @@ public class Consulta {
         return id_medico;
     }
 
-    public LocalDate getData() {
+    public Date getData() {
         return data;
     }
 
-    public LocalTime getHora() {
+    public Time getHora() {
         return hora;
     }
 
@@ -69,11 +72,11 @@ public class Consulta {
         this.id_medico = id_medico;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
-    public void setHora(LocalTime hora) {
+    public void setHora(Time hora) {
         this.hora = hora;
     }
 
